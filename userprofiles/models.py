@@ -12,5 +12,9 @@ class User(AbstractUser):
 
 class Profile(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=50, verbose_name="Название")
     content = models.TextField()
+
+    class Meta:
+        verbose_name = "Анкета"
+        verbose_name_plural = "Анкеты"
